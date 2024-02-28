@@ -23,7 +23,7 @@ export default function Home() {
       <div className=''>
         {/* <p className=' max-w-full overflow-hidden whitespace-normal break-words'>
           Тут ваш текст, який може виходити за межі контейнера.
-        </p> */}
+        </p> fdj */}
       </div>
       <div className='w-full relative flex flex-col items-center justify-center'>
         <CreatingPanel />
