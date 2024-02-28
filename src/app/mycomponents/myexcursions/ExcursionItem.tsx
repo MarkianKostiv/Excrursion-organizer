@@ -171,7 +171,7 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Об'єкти для розгляду : {excursion.excursionData.artifacts}
+              Предмети для розгляду : {excursion.excursionData.artifacts}
             </p>
             <p
               className={
