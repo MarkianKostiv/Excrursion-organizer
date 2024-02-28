@@ -13,9 +13,9 @@ export const ExcursionItem = (props: ExItem) => {
   const openingExcursionItem = (id: number, isButtonClick: boolean) => {
     setOpenedItems((prevItems) => {
       if (prevItems.includes(id) && isButtonClick) {
-        return prevItems.filter((item) => item !== id); // Закрити, якщо вже відкритий і був клік по кнопці
+        return prevItems.filter((item) => item !== id);
       } else {
-        return [...prevItems, id]; // Відкрити, якщо ще не відкритий або клік не по кнопці
+        return [...prevItems, id];
       }
     });
   };
@@ -27,7 +27,7 @@ export const ExcursionItem = (props: ExItem) => {
   };
 
   const infoParagraphStyle: string =
-    " max-w-full overflow-hidden whitespace-normal break-words shadow-md mb-3";
+    "max-w-full overflow-hidden whitespace-normal break-words shadow-md mb-3";
   return (
     <div className='text-[#000] w-full'>
       <ul>
@@ -89,7 +89,7 @@ export const ExcursionItem = (props: ExItem) => {
               <button
                 className={
                   isOpened(excursion.excursionData.id)
-                    ? " p-0 w-10 h-10 text-[#000] bg-[#f46845] hover:bg-[#9b1e1e] hover:text-[#fff] mb-4"
+                    ? "p-0 w-10 h-10 text-[#000] bg-[#f46845] hover:bg-[#9b1e1e] hover:text-[#fff] mb-4"
                     : "hidden"
                 }
                 onClick={(e) => {
