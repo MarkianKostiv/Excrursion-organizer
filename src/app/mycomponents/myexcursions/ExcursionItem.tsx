@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { UserObj } from "@/app/mytupes/UserObj";
+import Link from "next/link";
 
 interface ExItem {
   data: UserObj[];
@@ -182,6 +183,12 @@ export const ExcursionItem = (props: ExItem) => {
             >
               Джерела : {excursion.excursionData.references}
             </p>
+            <div>
+              {" "}
+              <Link href={`/downloadexcursion/${excursion.excursionData.id}`}>
+                <button>Завантажити Екскурсію </button>
+              </Link>
+            </div>
           </li>
         ))}
       </ul>
