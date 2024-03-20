@@ -15,7 +15,7 @@ export default function DownloadPage(props: any) {
       const parsedData = JSON.parse(data);
       console.log(parsedData);
       const excursionObjData: UserObj = parsedData.find(
-        (obj: any) => obj.excursionData.id == excrusionId
+        (obj: UserObj) => obj.excursionData.id == excrusionId
       );
       console.log(excursionObjData);
 
@@ -28,7 +28,11 @@ export default function DownloadPage(props: any) {
     <>
       <div className='flex flex-col items-center justify-center'>
         <div className='flex justify-start w-full'>
-          <Link href='/'>Додому</Link>
+          <Link href='/'>
+            <button className='mt-5 ml-5 bg-[#dda13a] hover:bg-[#fa9c4e]'>
+              Додому
+            </button>
+          </Link>
         </div>
         <h1 className='text-[#fff]'>
           Сформуйте PDF файл, щоб зберегти локально екскурсію "

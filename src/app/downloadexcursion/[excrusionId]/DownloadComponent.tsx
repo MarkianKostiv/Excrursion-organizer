@@ -1,32 +1,23 @@
 "use client";
 import pdfMake from "pdfmake/build/pdfmake";
 import vfsFonts from "pdfmake/build/vfs_fonts";
-interface DownloadData {
-  data?: {
-    id: number;
-    author: string;
-    tittle: string;
-    kind: string;
-    topic: string;
-    goal: string;
-    references: string;
-    time: string;
-    artifacts: string;
-  };
-}
+import { DownloadData } from "@/app/mytupes/DownloadData";
+import { DocDefinitionTypes } from "@/app/mytupes/DocDefinitionTypes";
+import Image from "next/image";
+import img from "../../../../public/img2.png";
 
 export const DownloadComponent = (props: DownloadData) => {
   const { data } = props;
-  console.log(data);
-  const documentName = data?.tittle;
-  const documentDescription =
-    "Цей документ створений за допомогою програми Екскурсійний органайзер.";
-  const linkToOrganizer = "Click to visit ";
+
   const createPDF = () => {
+    const documentName = data?.tittle;
+    const documentDescription =
+      "Цей документ створений за допомогою програми Екскурсійний органайзер.";
+    const linkToOrganizer = "Відвідати органайзер";
     const { vfs } = vfsFonts.pdfMake;
     pdfMake.vfs = vfs;
 
-    const docDefinition: any = {
+    const docDefinition: DocDefinitionTypes = {
       content: [
         {
           text: documentDescription,
@@ -46,14 +37,65 @@ export const DownloadComponent = (props: DownloadData) => {
           fontSize: 24,
           alignment: "center",
           margin: [10, 10, 10, 10],
+          style: "header",
         },
-        { text: `Автор: ${data?.author}` },
-        { text: `Мета: ${data?.goal}` },
-        { text: `Вид: ${data?.kind}` },
-        { text: `Тема: ${data?.topic}` },
-        { text: `Час: ${data?.time}` },
-        { text: `Об'єкти для огляду: ${data?.artifacts}` },
-        { text: `Матеріали: ${data?.references}` },
+        {
+          text: [
+            {
+              text: "Автор: ",
+              bold: true,
+              fontSize: 16,
+              margin: [20, 0, 0, 0],
+            },
+            { text: `${data?.author}` },
+          ],
+        },
+        {
+          text: [
+            { text: "Мета: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
+            { text: `${data?.goal}` },
+          ],
+        },
+        {
+          text: [
+            { text: "Вид: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
+            { text: `${data?.kind}` },
+          ],
+        },
+        {
+          text: [
+            { text: "Тема: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
+            { text: `${data?.topic}` },
+          ],
+        },
+        {
+          text: [
+            { text: "Час: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
+            { text: `${data?.time}` },
+          ],
+        },
+        {
+          text: [
+            {
+              text: "Об'єкти для огляду: ",
+              bold: true,
+              fontSize: 16,
+              margin: [20, 0, 0, 0],
+            },
+            { text: `${data?.artifacts}` },
+          ],
+        },
+        {
+          text: [
+            {
+              text: "Матеріали: ",
+              bold: true,
+              fontSize: 16,
+              margin: [20, 0, 0, 0],
+            },
+            { text: `${data?.references}` },
+          ],
+        },
       ],
     };
 
