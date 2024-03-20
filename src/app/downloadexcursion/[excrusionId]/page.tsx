@@ -27,13 +27,6 @@ export default function DownloadPage(props: any) {
   return (
     <>
       <div className='flex flex-col items-center justify-center'>
-        <div className='flex justify-start w-full'>
-          <Link href='/'>
-            <button className='mt-5 ml-5 bg-[#dda13a] hover:bg-[#fa9c4e]'>
-              Додому
-            </button>
-          </Link>
-        </div>
         <h1 className='text-[#fff]'>
           Сформуйте PDF файл, щоб зберегти локально екскурсію "
           {dataObjExcursion?.excursionData.tittle}"
