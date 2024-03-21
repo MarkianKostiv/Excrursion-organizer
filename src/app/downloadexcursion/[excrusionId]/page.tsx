@@ -27,7 +27,7 @@ export default function DownloadPage(props: any) {
   return (
     <>
       <div className='flex flex-col items-center justify-center'>
-        <h1 className='text-[#fff]'>
+        <h1 className='text-[#fff] text-center'>
           Сформуйте PDF файл, щоб зберегти локально екскурсію "
           {dataObjExcursion?.excursionData.tittle}"
         </h1>

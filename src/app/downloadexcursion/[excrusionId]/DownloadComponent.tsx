@@ -3,8 +3,6 @@ import pdfMake from "pdfmake/build/pdfmake";
 import vfsFonts from "pdfmake/build/vfs_fonts";
 import { DownloadData } from "@/app/mytupes/DownloadData";
 import { DocDefinitionTypes } from "@/app/mytupes/DocDefinitionTypes";
-import Image from "next/image";
-import img from "../../../../public/img2.png";
 
 export const DownloadComponent = (props: DownloadData) => {
   const { data } = props;
@@ -47,31 +45,39 @@ export const DownloadComponent = (props: DownloadData) => {
               fontSize: 16,
               margin: [20, 0, 0, 0],
             },
-            { text: `${data?.author}` },
+            {
+              text: `${data?.author}`,
+              alignment: "justify",
+              margin: [20, 0, 0, 0],
+            },
           ],
         },
         {
           text: [
             { text: "Мета: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
-            { text: `${data?.goal}` },
+            {
+              text: `${data?.goal}`,
+              alignment: "justify",
+              margin: [20, 0, 0, 0],
+            },
           ],
         },
         {
           text: [
             { text: "Вид: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
-            { text: `${data?.kind}` },
+            { text: `${data?.kind}`, alignment: "justify" },
           ],
         },
         {
           text: [
             { text: "Тема: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
-            { text: `${data?.topic}` },
+            { text: `${data?.topic}`, alignment: "justify" },
           ],
         },
         {
           text: [
             { text: "Час: ", bold: true, fontSize: 16, margin: [20, 0, 0, 0] },
-            { text: `${data?.time}` },
+            { text: `${data?.time}`, alignment: "justify" },
           ],
         },
         {
@@ -82,7 +88,7 @@ export const DownloadComponent = (props: DownloadData) => {
               fontSize: 16,
               margin: [20, 0, 0, 0],
             },
-            { text: `${data?.artifacts}` },
+            { text: `${data?.artifacts}`, alignment: "justify" },
           ],
         },
         {
@@ -93,7 +99,7 @@ export const DownloadComponent = (props: DownloadData) => {
               fontSize: 16,
               margin: [20, 0, 0, 0],
             },
-            { text: `${data?.references}` },
+            { text: `${data?.references}`, alignment: "justify" },
           ],
         },
       ],
@@ -104,7 +110,9 @@ export const DownloadComponent = (props: DownloadData) => {
 
   return (
     <>
-      <h3 className='m-4'>Завантажте Вашу екскурсію у форматі pdf </h3>
+      <h3 className='m-4 text-center'>
+        Завантажте Вашу екскурсію у форматі pdf{" "}
+      </h3>
       <button
         className='bg-[#44ce52] hover:bg-[#3b9f45]'
         onClick={createPDF}

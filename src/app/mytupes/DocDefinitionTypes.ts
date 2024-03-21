@@ -3,6 +3,7 @@ interface TextObject {
   bold?: true;
   fontSize?: number;
   margin?: [number, number, number, number];
+  alignment?: "left" | "center" | "right" | "justify";
 }
 
 export interface DocDefinitionTypes {
