@@ -1,6 +1,6 @@
 export interface UserObj {
   excursionData: {
-    id: number;
+    id: string;
     author: string;
     tittle: string;
     kind: string;

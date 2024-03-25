@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { UserObj } from "@/app/mytupes/UserObj";
+import { v4 as uuidv4 } from "uuid";
+
 export const Form = () => {
   const [kind, setKind] = useState("");
   const [author, setAuthor] = useState("");
@@ -28,7 +30,7 @@ export const Form = () => {
     const event = new CustomEvent("userDataChanged");
     const userDataObj: UserObj = {
       excursionData: {
-        id: 0,
+        id: "",
         author,
         tittle,
         kind: "",
@@ -41,6 +43,7 @@ export const Form = () => {
     };
 
     const userObjDataRecording = () => {
+      userDataObj.excursionData.id = uuidv4();
       userDataObj.excursionData.author = author.valueOf();
       userDataObj.excursionData.tittle = tittle.valueOf();
       userDataObj.excursionData.kind = kind.valueOf();
@@ -52,20 +55,13 @@ export const Form = () => {
     };
 
     if (isLocalStorageData) {
-      console.log(tittle);
       userObjDataRecording();
-      console.log("масив є хуйлцша переробляй");
       const localData = JSON.parse(isLocalStorageData);
-      userDataObj.excursionData.id = localData.length;
-      console.log(localData.length);
       setDataArray((localData) => [userDataObj, ...localData]);
       const saveData = JSON.stringify([userDataObj, ...localData]);
       localStorage.setItem("Excursions", saveData);
       window.dispatchEvent(event);
-      console.log("чи записується", localData);
     } else {
-      console.log("ніхуя нема давай по новій");
-      userDataObj.excursionData.id = dataArray.length;
       userObjDataRecording();
 
       setDataArray((prevData) => [userDataObj, ...prevData]);
