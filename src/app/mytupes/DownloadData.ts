@@ -1,6 +1,6 @@
 export interface DownloadData {
   data?: {
-    id: number;
+    id: string;
     author: string;
     tittle: string;
     kind: string;

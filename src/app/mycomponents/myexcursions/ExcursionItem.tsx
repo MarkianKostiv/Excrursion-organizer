@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { UserObj } from "@/app/mytupes/UserObj";
 import Link from "next/link";
+import { ROUTING } from "./routing";
 
 interface ExItem {
   data: UserObj[];
@@ -9,9 +10,9 @@ interface ExItem {
 
 export const ExcursionItem = (props: ExItem) => {
   const { data } = props;
-  const [openedItems, setOpenedItems] = useState<number[]>([]);
+  const [openedItems, setOpenedItems] = useState<string[]>([]);
 
-  const openingExcursionItem = (id: number, isButtonClick: boolean) => {
+  const openingExcursionItem = (id: string, isButtonClick: boolean) => {
     setOpenedItems((prevItems) => {
       if (prevItems.includes(id) && isButtonClick) {
         return prevItems.filter((item) => item !== id);
@@ -21,9 +22,9 @@ export const ExcursionItem = (props: ExItem) => {
     });
   };
 
-  const isOpened = (id: number) => openedItems.includes(id);
+  const isOpened = (id: string) => openedItems.includes(id);
 
-  const handleClick = (e: React.MouseEvent, id: number) => {
+  const handleClick = (e: React.MouseEvent, id: string) => {
     openingExcursionItem(id, e.target instanceof HTMLButtonElement);
   };
 
@@ -82,7 +83,7 @@ export const ExcursionItem = (props: ExItem) => {
             key={excursion.excursionData.id}
             className={
               isOpened(excursion.excursionData.id)
-                ? " fixed w-full h-full top-0 left-0 p-3 mt-3 bg-[#fff] rounded-xl z-20"
+                ? " fixed w-full h-full top-0 left-0 p-3 pb-5 pt-5 overflow-scroll bg-[#fff] rounded-xl z-20"
                 : " hidden"
             }
           >
@@ -127,7 +128,8 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Автор: {excursion.excursionData.author}
+              <span className=' font-semibold text-lg'>Автор: </span>
+              {excursion.excursionData.author}
             </p>
             <p
               className={
@@ -136,7 +138,8 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Вид: {excursion.excursionData.kind}
+              <span className=' font-semibold text-lg'>Вид: </span>
+              {excursion.excursionData.kind}
             </p>
             <p
               className={
@@ -145,7 +148,8 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Тема:{excursion.excursionData.topic}
+              <span className=' font-semibold text-lg'>Тема: </span>
+              {excursion.excursionData.topic}
             </p>
             <p
               className={
@@ -154,7 +158,8 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Мета : {excursion.excursionData.goal}
+              <span className=' font-semibold text-lg'>Мета: </span>
+              {excursion.excursionData.goal}
             </p>
             <p
               className={
@@ -163,7 +168,10 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Час на проведення : {excursion.excursionData.time}
+              <span className=' font-semibold text-lg'>
+                Час на проведення:{" "}
+              </span>
+              {excursion.excursionData.time}
             </p>
             <p
               className={
@@ -172,7 +180,11 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Предмети для розгляду : {excursion.excursionData.artifacts}
+              {" "}
+              <span className=' font-semibold text-lg'>
+                Предмети для розгляду:{" "}
+              </span>
+              {excursion.excursionData.artifacts}
             </p>
             <p
               className={
@@ -181,11 +193,12 @@ export const ExcursionItem = (props: ExItem) => {
                   : "hidden"
               }
             >
-              Джерела : {excursion.excursionData.references}
+              <span className=' font-semibold text-lg'>Джерела: </span>
+              {excursion.excursionData.references}
             </p>
             <div>
               {" "}
-              <Link href={`/downloadexcursion/${excursion.excursionData.id}`}>
+              <Link href={ROUTING.excursion(excursion.excursionData.id)}>
                 <button>Завантажити Екскурсію </button>
               </Link>
             </div>
