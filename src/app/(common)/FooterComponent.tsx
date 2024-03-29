@@ -8,12 +8,12 @@ export const FooterComponent = () => {
       <p className='m-4'>
         Проєкт розроблено в рамках Бакалаврської роботи:{" "}
         <span>
-          "Музеї та авіація. Потенціал аерокосмічних музеїв науки та техніки в
-          Україні”
+          &#34;Музеї та авіація. Потенціал аерокосмічних музеїв науки та техніки
+          в Україні&#34;
         </span>{" "}
         <span>
-          "Museums and Aviation. The potential of aerospace museums of science
-          and technology in Ukraine."
+          &#34;Museums and Aviation. The potential of aerospace museums of
+          science and technology in Ukraine.&#34;
         </span>
       </p>
     </footer>

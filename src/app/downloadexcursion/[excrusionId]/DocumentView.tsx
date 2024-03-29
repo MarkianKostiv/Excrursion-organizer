@@ -16,7 +16,7 @@ export const DocumentView = (props: DownloadData) => {
           >
             Відвідати Органайзер
           </a>
-          <h2 className=' font-semibold text-3xl'>"{data?.tittle}"</h2>
+          <h2 className=' font-semibold text-3xl'>&#34;{data?.tittle}&#34;</h2>
           <ul className='text-left ml-5 mt-7 font-medium text-base'>
             <li>
               <p>
