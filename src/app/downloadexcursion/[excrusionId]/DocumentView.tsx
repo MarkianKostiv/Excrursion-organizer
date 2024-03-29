@@ -20,7 +20,6 @@ export const DocumentView = (props: DownloadData) => {
           <ul className='text-left ml-5 mt-7 font-medium text-base'>
             <li>
               <p>
-                {" "}
                 <span className={spanStyles}>Автор:</span> {data?.author}
               </p>
             </li>
@@ -31,33 +30,28 @@ export const DocumentView = (props: DownloadData) => {
             </li>
             <li>
               <p>
-                {" "}
                 <span className={spanStyles}>Вид:</span> {data?.kind}
               </p>
             </li>
             <li>
               <p>
-                {" "}
                 <span className={spanStyles}>Тема:</span> {data?.topic}
               </p>
             </li>
             <li>
               <p>
-                {" "}
                 <span className={spanStyles}>Час проведення:</span> {data?.time}
               </p>
             </li>
             <li>
               <p>
-                {" "}
-                <span className={spanStyles}>Об'єкти для огляду:</span>{" "}
+                <span className={spanStyles}>Об&apos;єкти для огляду:</span>
                 {data?.artifacts}
               </p>
             </li>
             <li>
               <p>
-                {" "}
-                <span className={spanStyles}>Матеріали:</span>{" "}
+                <span className={spanStyles}>Матеріали:</span>
                 {data?.references}
               </p>
             </li>
