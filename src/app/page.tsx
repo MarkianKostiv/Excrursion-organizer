@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CreatingPanel } from "./mycomponents/CreatingPannel";
 import { UserExcursionsList } from "./mycomponents/myexcursions/UserExcursionsList";
 import WaveButton from "./mycomponents/myexcursions/WaveButton";
+import { TechnologiesList } from "./mycomponents/(technologies)/TechnologiesList";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         >
           Tets
         </Link> */}
+        <TechnologiesList />
       </div>
     </main>
   );

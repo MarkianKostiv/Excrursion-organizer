@@ -23,7 +23,7 @@ export const CreatingPanel = () => {
       <div
         className={
           opened
-            ? "rounded-2xl shadow-md flex flex-col bg-gradient-to-b from-[#1fe0d1] [#97cdcd] to-[#ccf5f5] text-[#000] fixed top-12 w-80 items-center z-10 sm:w-full"
+            ? "rounded-2xl shadow-md flex flex-col bg-gradient-to-b from-[#1fe0d1] [#97cdcd] to-[#ccf5f5] text-[#000] fixed top-12 w-80 items-center z-20 sm:w-full"
             : "hidden"
         }
       >

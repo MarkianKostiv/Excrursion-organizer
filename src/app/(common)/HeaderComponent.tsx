@@ -3,7 +3,7 @@ import { HomeBtn } from "./HomeBtn";
 import HomeIcon from "@mui/icons-material/Home";
 export const HeaderComponent = () => {
   return (
-    <header className='flex items-center justify-center p-4 text-center sticky top-0 '>
+    <header className='flex items-center justify-center p-4 text-center sticky top-0  z-20'>
       {" "}
       <div className='flex justify-start w-full'>
         <Link href='/'>

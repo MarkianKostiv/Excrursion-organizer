@@ -3,9 +3,9 @@ export const DocumentView = (props: DownloadData) => {
   const { data } = props;
   const spanStyles = "font-bold text-lg";
   return (
-    <div className='w-full p-16'>
+    <div className='w-full md:p-16 p-4'>
       <div className='w-full p-4 bg-[#979191] border-[#fff] border-2'>
-        <div className='w-full bg-[#fff] text-[#000] pl-4 pr-4 pb-6 text-center'>
+        <div className='w-full bg-[#fff] text-[#000] md:pl-4 md:pr-4 pl-2 pr-2 pb-6 text-center'>
           <h1 className='flex flex-col pt-6 font-semibold text-xl '>
             Цей документ створений за допомогою програми{" "}
             <span>Екскурсійний органайзер.</span>
