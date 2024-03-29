@@ -1,5 +1,5 @@
-export interface UserObj {
-  excursionData: {
+export interface DownloadData {
+  data?: {
     id: string;
     author: string;
     tittle: string;

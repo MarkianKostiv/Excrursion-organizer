@@ -1,6 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CreatingPanel } from "./mycomponents/CreatingPannel";
 import { UserExcursionsList } from "./mycomponents/myexcursions/UserExcursionsList";
+import WaveButton from "./mycomponents/myexcursions/WaveButton";
+import { TechnologiesList } from "./mycomponents/(technologies)/TechnologiesList";
 
 export default function Home() {
   return (
@@ -28,6 +31,13 @@ export default function Home() {
       <div className='w-full relative flex flex-col items-center justify-center'>
         <CreatingPanel />
         <UserExcursionsList />
+        {/* <Link
+          className='text-{#fff}'
+          href={"/test"}
+        >
+          Tets
+        </Link> */}
+        <TechnologiesList />
       </div>
     </main>
   );
